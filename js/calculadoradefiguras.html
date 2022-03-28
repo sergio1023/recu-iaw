@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador circunferencia, círculo y esfera</title>
+    <script>
+        window.addEventListener("load",function () {
+            let numero = document.getElementById("numero")
+            let circunferencia = document.getElementById("circunferencia")
+            let circulo = document.getElementById("circulo")
+            let esfera = document.getElementById("esfera")
+            let boton = document.getElementById("boton")
+            let contenedor = document.getElementById("contenedor")
+            
+                boton.addEventListener("click",function () {
+                    contenedor.innerHTML = " "
+                    let r = parseFloat(numero.value)
+                        if (circunferencia.checked) {
+                            contenedor.innerHTML = contenedor.innerHTML  + (2 * 3.14 * r) + "<br/>"
+                        }if (circulo.checked) {
+                            contenedor.innerHTML = contenedor.innerHTML +  (3.14 * r * r)  + "<br/>"
+                        }if (esfera.checked) {
+                            contenedor.innerHTML = contenedor.innerHTML + (4/3 * 3.14 * r * r * r) + "<br/>"
+                        }if (circunferencia.checked == "" && circulo.checked == "" && esfera.checked == "") {
+                        contenedor.innerHTML = 'Selecciona una casilla' + "<br/>"
+                        }
+                })
+            
+        })
+
+    </script>
+</head>
+<body>
+    <input type="number" id="numero"><br/>
+    <input type="checkbox" name="chequea" id="circunferencia">Calcular circunferencia<br/>
+    <input type="checkbox" name="chequea" id="circulo">Calcular circulo<br/>
+    <input type="checkbox" name="chequea" id="esfera">Calcular esfera<br/>
+    <button id="boton">Calcular</button><br/>
+    <div id="contenedor"></div>
+</body>
+</html>
