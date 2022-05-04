@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maceta</title>
+    <script>
+            window.addEventListener("load",function () {
+                let altura = document.getElementById("altura")
+                let longitud1 = document.getElementById("longitud1")
+                let anchura1 = document.getElementById("anchura1")
+                let longitud2 = document.getElementById("longitud2")
+                let anchura2 = document.getElementById("anchura2")
+                let boton = document.getElementById("boton")
+                let contenedor = document.getElementById("contenedor")
+                    boton.addEventListener("click",function () {
+                        let valoraltura = parseFloat(altura.value)
+                        let valorlongitud1 = parseFloat(longitud1.value)
+                        let valoranchura1 = parseFloat(anchura1.value)
+                        let valorlongitud2 = parseFloat(longitud2.value)
+                        let valoranchura2 = parseFloat(anchura2.value)
+                        let A1 = valorlongitud1 * valoranchura1
+                        let A2 = valorlongitud2 * valoranchura2
+                        let multiareas = A1 * A2
+                        contenedor.innerHTML =  "Tu maceta ocupa " + (valoraltura/3 * (A1 + A2 + Math.sqrt(multiareas))) + " m2"
+                    })
+            })
+    </script>
+</head>
+<body>
+    <form action="maceta.html" method="post">
+        <fieldset>
+            <legend>¿Cuánto ocupa esta maceta en tu jardín?</legend>
+                <p>
+                    Altura: <input type="number" id="altura">
+                </p><br>
+                <h4>Parte superior</h4>
+                <p>
+                    Longitud: <input type="number" id="longitud1">
+                </p><br>
+                <p>
+                    Anchura: <input type="number" id="anchura1">
+                </p><br>
+                <h4>Parte inferior</h4>
+                <p>
+                    Longitud: <input type="number" id="longitud2">
+                </p><br>
+                <p>
+                    Anchura: <input type="number" id="anchura2">
+                </p><br>
+            <input type="button" value="calcular" id="boton">
+        </fieldset>
+    </form>
+    <br><br>
+    <h3>El resultado es:</h3><br>
+    <h1 id="contenedor"></h1>
+</body>
+</html>

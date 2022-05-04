@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefonete</title>
+    <script>
+        window.addEventListener("load",function () {
+            let boton0 = document.getElementById("boton0")
+            let boton1 = document.getElementById("boton1")
+            let boton2 = document.getElementById("boton2")
+            let boton3 = document.getElementById("boton3")
+            let boton4 = document.getElementById("boton4")
+            let boton5 = document.getElementById("boton5")
+            let boton6 = document.getElementById("boton6")
+            let boton7 = document.getElementById("boton7")
+            let boton8 = document.getElementById("boton8")
+            let boton9 = document.getElementById("boton9")
+            let limpiar = document.getElementById("limpiar")
+        
+                boton0.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 0
+                })
+                boton1.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 1
+                })
+                boton2.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 2
+                })
+                boton3.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 3
+                })
+                boton4.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 4
+                })
+                boton5.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 5
+                })
+                boton6.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 6
+                })
+                boton7.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 7
+                })
+                boton8.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 8
+                })
+                boton9.addEventListener("click",function (){
+                    contenedor.innerHTML = contenedor.innerHTML + 9
+                })
+                limpiar.addEventListener("click",function (){
+                    contenedor.innerHTML = " "
+                })
+        })
+
+
+    </script>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td><button id="boton7">7</button></td>
+            <td><button id="boton8">8</button></td>
+            <td><button id="boton9">9</button></td>
+        </tr>
+        <tr>
+            <td><button id="boton4">4</button></td>
+            <td><button id="boton5">5</button></td>
+            <td><button id="boton6">6</button></td>
+        </tr>
+        <tr>
+            <td><button id="boton1">1</button></td>
+            <td><button id="boton2">2</button></td>
+            <td><button id="boton3">3</button></td>
+        </tr>
+        <tr>
+            <td><button>/</button></td>
+            <td><button id="boton0">0</button></td>
+            <td><button>#</button></td>
+        </tr>
+
+    </table>
+</br></br>
+<button id="limpiar">Limpiar</button></br></br>
+<h1 id="contenedor"></h1>
+</body>
+</html>

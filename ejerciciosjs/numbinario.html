@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binario</title>
+    <script>
+            window.addEventListener("load",function () {
+                let boton0 = document.getElementById("boton0")
+                let boton1 = document.getElementById("boton1")
+                let contenedor = document.getElementById("contenedor")
+                let calcular = document.getElementById("calcular")
+                let calculo = document.getElementById("calculo")
+
+                boton0.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 0
+                })
+                boton1.addEventListener("click",function () {
+                    contenedor.innerHTML = contenedor.innerHTML + 1
+                })
+                calcular.addEventListener("click",function () {
+                    calculo.innerHTML = parseInt(contenedor.innerHTML,2)
+                })
+            })
+
+    </script>
+</head>
+<body>
+    <button id="boton0">0</button>
+    <button id="boton1">1</button></br>
+    <h1 id="contenedor"></h1></br>
+    <button id="calcular">Calcular</button></br>
+    <h3 id="calculo"><b></b></h3></br>
+</body>
+</html>
