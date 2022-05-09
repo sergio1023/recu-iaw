@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teléfono</title>
+    <script>
+        window.addEventListener("load",function () {
+            let boton7 = document.getElementById("boton7")
+            let boton8 = document.getElementById("boton8")
+            let boton9 = document.getElementById("boton9")
+            let boton4 = document.getElementById("boton4")
+            let boton5 = document.getElementById("boton5")
+            let boton6 = document.getElementById("boton6")
+            let boton1 = document.getElementById("boton1")
+            let boton2 = document.getElementById("boton2")
+            let boton3 = document.getElementById("boton3")
+            let boton0 = document.getElementById("boton0")
+            let limpiar = document.getElementById("limpiar")
+        boton7.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 7
+        })
+        boton8.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 8
+        })
+        boton9.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 9
+        })
+        boton4.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 4
+        })
+        boton5.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 5
+        })
+        boton6.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 6
+        })
+        boton1.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 1
+        })
+        boton2.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 2
+        })
+        boton3.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 3
+        })
+        boton0.addEventListener("click",function(){
+        contenedor.innerHTML = contenedor.innerHTML + 0
+        })
+        limpiar.addEventListener("click",function(){
+        contenedor.innerHTML =  ""
+        })
+    })
+    window.addEventListener("load",function () {
+        for (let variable = 0; variable < 5; variable++) {
+        for (let variable2 = 0; variable2 < 5; variable2++) {
+        let button = document.createElement('button')
+        button.innerHTML = 'SI'
+        sal.appendChild(button)
+        }
+        let br =document.createElement('br')
+        sal.appendChild(br)
+        } 
+    })
+    // Esto es para darle color a los botones cuando el ratón está encima
+    window.addEventListener("load",function () {
+        let lista1 = document.getElementById("lista1")
+        let lista2 = document.getElementById("lista2")
+        let botoncolor = document.getElementById("botoncolor")
+        lista1.addEventListener("mouseenter", function (event) {
+            event.target.style.color = "yellow";
+            setTimeout(function() {
+            event.target.style.color = "";
+            }, 500);
+        }, false);
+        lista2.addEventListener("mouseover", function( event ) {
+             // highlight the mouseover target
+              event.target.style.color = "orange";
+
+             // reset the color after a short delay
+             setTimeout(function() {
+             event.target.style.color = "";
+            },500);
+        }, false);
+        botoncolor.addEventListener("mouseover",function (){
+            event.target.style.color = 'pink';
+        })
+    })       
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><button id="boton7">7</button></td>
+            <td><button id="boton8">8</button></td>
+            <td><button id="boton9">9</button></td>
+        </tr>
+        <tr>
+            <td><button id="boton4">4</button></td>
+            <td><button id="boton5">5</button></td>
+            <td><button id="boton6">6</button></td>
+        </tr>
+        <tr>
+            <td><button id="boton1">1</button></td>
+            <td><button id="boton2">2</button></td>
+            <td><button id="boton3">3</button></td>
+        </tr>
+        <tr>
+            <td><button id="#">#</button></td>
+            <td><button id="boton0">0</button></td>
+            <td><button id="*">*</button></td>
+        </tr>
+    </table>
+    <br/>
+    <h1 id="contenedor"></h1><br/>
+    <button id="limpiar">LIMPIAR</button><br/><br/>
+    <div id="sal"></div><br/>
+    <ul id="lista1">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+      <ul id="lista2">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+      <button id="botoncolor">Color rosa</button>
+</body>
+</html>

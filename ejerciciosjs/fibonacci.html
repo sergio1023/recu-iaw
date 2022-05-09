@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+    <script>
+        window.addEventListener("load",function () {
+                let anterior = 0
+                let actual = -1
+                let boton = document.getElementById("boton")
+                let numactual = document.getElementById("numactual")
+                let contenedor = document.getElementById("contenedor")
+            boton.addEventListener("click",function () {
+                if (actual == -1) {
+                    actual = 0
+                } else if (actual == 0) {
+                    actual = 1
+                } else{
+                    let tmp = actual
+                    actual = actual + anterior
+                    anterior = tmp
+                }
+            numactual.innerHTML = actual
+           contenedor.innerHTML = contenedor.innerHTML + ' ' + actual
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Generador de fibonacci</h1><br/>
+    <button id="boton">genera</button><br/>
+    <h3 id="numactual"></h3><br/><br/>
+    <div id="contenedor"></div>
+</body>
+</html>

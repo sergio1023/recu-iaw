@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número de clicks</title>
+    <script>
+        window.addEventListener("load",function () {
+            alert('que tal')
+            let boton = document.getElementById("boton")
+            let contenedor = document.getElementById("contenedor")
+            let numclick = 0
+            boton.addEventListener("click",function(){
+                // Si no se pone el doble == no se incrementan las pulsaciones
+                numclick = numclick +1
+                if (numclick == 1) {
+                    contenedor.innerHTML = 'BUENAS!'
+                } else if (numclick == 5) {
+                    contenedor.innerHTML = 'Ya llevas'+' '+numclick+' '+'capullo'
+                    alert('Llevas'+ ' '+ numclick)
+                }
+                 else {
+                    contenedor.innerHTML = 'Me has pulsado' + ' ' + numclick + ' ' + 'veces'
+                    // alert('Me has pulsado' + ' ' + numclick + ' ' + 'veces')
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <button id="boton">Pulsa hijo</button>
+    <div id="contenedor">Hola</div>
+</body>
+</html>

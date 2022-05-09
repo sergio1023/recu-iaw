@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binario</title>
+    <script>
+        document.writeln("Esto es un print JS fuera del window addEventListener")
+        window.addEventListener("load",function () {
+        let num0 = document.getElementById("num0")
+        let num1 = document.getElementById("num1")
+        let contenedor = document.getElementById("contenedor")
+        let calcula = document.getElementById("calcula")
+        let resultado = document.getElementById("resultado")
+        let color = document.getElementById("color")
+        let lista = document.getElementById("lista")
+        let listacalculo = document.getElementById("listacalculo")
+        let lista2 = document.getElementById("lista2")
+            num0.addEventListener("click",function () {
+                valor0 = parseInt(num0.value)
+                contenedor.innerHTML = contenedor.innerHTML + 0
+            })
+            num1.addEventListener("click",function () {
+                valor0 = parseInt(num1.value)
+                contenedor.innerHTML = contenedor.innerHTML + 1
+            })
+            calcula.addEventListener("click",function () {
+                 resultado.innerHTML = parseInt(contenedor.innerHTML,2)
+            })
+            color.addEventListener("mouseover",function(){
+                let li = document.createElement('li')
+                li.innerHTML = 'Entrada'
+                lista.appendChild(li)
+            })
+            color.addEventListener("mouseenter",function(){
+                let li = document.createElement('li')
+                li.innerHTML = 'Porfavor'
+                lista.appendChild(li)
+            })
+            color.addEventListener("mouseleave",function(){
+                let li = document.createElement('li')
+                li.innerHTML = 'Salida'
+                lista.appendChild(li)
+            })
+            color.addEventListener("mouseover",function(){
+                let aleatorio = '#'+Math.floor(Math.random()*16777215).toString(16);
+                lista.style.color = aleatorio
+            })
+            listacalculo.addEventListener("mouseover",function(){
+                let li = document.createElement('li')
+                li.innerHTML = resultado.innerHTML
+                lista2.appendChild(li)
+            })
+        })
+    </script>
+</head>
+<body>
+    <br/>
+    <button id="num0">0</button>
+    <button id="num1">1</button>
+    <h1 id="contenedor"></h1><br/>
+    <button id="calcula">calcula</button><br/>
+    <b><h3 id="resultado"></h3></b><br/>
+    <button id="color">Colorcillo ahí</button><br/>
+    <ul id="lista"></ul>
+    <button id="listacalculo">Lista de calculo binario</button><br/>
+    <ul id="lista2"></ul>
+</body>
+</html>

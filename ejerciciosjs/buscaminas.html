@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas</title>
+    <script>
+        window.addEventListener("load",function() {
+            let numero = document.getElementById("numero")
+            let boton = document.getElementById("boton")
+            let contenido = document.getElementById("contenido")
+        boton.addEventListener("click",function(params) {
+            for (let index = 0; index < parseInt(numero.value); index++) {
+                for (let linea = 0; linea < parseInt(numero.value); linea++) {
+                    let button = document.createElement('button')
+                    let aleatorio = Math.random()
+                if(aleatorio < 0.8){
+                    button.innerHTML = 'Apruebas'
+                    button.setAttribute('style','background:lightgreen')
+                } else {
+                    button.innerHTML = 'Hijo'
+                    button.setAttribute('style','background:' + color)
+                }
+                 contenido.appendChild(button)     
+                }
+            let br = document.createElement('br')
+            contenido.appendChild(br)                 
+            }
+        })
+        })
+    </script>
+</head>
+<body>
+    <input type="number" id="numero">
+    <button id="boton">Nuevo juego</button>
+    <div id="contenido"></div>
+</body>
+</html>

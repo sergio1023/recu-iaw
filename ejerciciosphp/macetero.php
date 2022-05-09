@@ -12,13 +12,17 @@ $calcular = "";
 if (isset($_POST['calcular'])){
     $altura = ($_POST['altura']);
     if(isset($_POST['longitud1'])){
-        $longitud1 = ($_POST['longitud1']);}
-        if(isset($_POST['anchura1'])){
-            $anchura1 = ($_POST['anchura1']);}
-            if(isset($_POST['longitud2'])){
-                $longitud2 = ($_POST['longitud2']);}
-                if(isset($_POST['anchura2'])){
-                    $anchura2 =( $_POST['anchura2']);}
+        $longitud1 = ($_POST['longitud1']);
+    }
+    if(isset($_POST['anchura1'])){
+        $anchura1 = ($_POST['anchura1']);
+    }
+    if(isset($_POST['longitud2'])){
+         $longitud2 = ($_POST['longitud2']);
+    }
+    if(isset($_POST['anchura2'])){
+        $anchura2 =( $_POST['anchura2']);
+    }
 }
 
 
@@ -41,21 +45,21 @@ $floatresultado = floatval($resultado);
         <fieldset>
             <legend>¿Cuánto ocupa esta maceta en tu jardín?</legend>
                 <p>
-                    Altura: <input type="number" name="altura" value="<?=$altura?>">
+                    Altura: <input type="decimal" name="altura" value="<?=$altura?>">
                 </p><br>
                 <h4>Parte superior</h4>
                 <p>
-                    Longitud: <input type="number" name="longitud1" value="<?=$longitud1?>">
+                    Longitud: <input type="decimal" name="longitud1" value="<?=$longitud1?>">
                 </p><br>
                 <p>
-                    Anchura: <input type="number" name="anchura1" value="<?=$anchura1?>">
+                    Anchura: <input type="decimal" name="anchura1" value="<?=$anchura1?>">
                 </p><br>
                 <h4>Parte inferior</h4>
                 <p>
-                    Longitud: <input type="number" name="longitud2" value="<?=$longitud1?>">
+                    Longitud: <input type="decimal" name="longitud2" value="<?=$longitud1?>">
                 </p><br>
                 <p>
-                    Anchura: <input type="number" name="anchura2" value="<?=$anchura2?>">
+                    Anchura: <input type="decimal" name="anchura2" value="<?=$anchura2?>">
                 </p><br>
             <input type="submit" value="calcular" name="calcular">
         </fieldset>

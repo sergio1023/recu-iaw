@@ -1,0 +1,9 @@
+.background-error{
+    background-color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.error {
+    background-color: red;
+    color: blue;
+    font-style: inherit;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carro</title>
+    <script>
+        window.addEventListener("load",function () {
+            let texto = document.getElementById("texto")
+            let numero = document.getElementById("numero")
+            let boton = document.getElementById("boton")
+            let lista = document.getElementById("lista")
+            boton.addEventListener("click",function () {
+                if (texto.value != '' && numero.value != '') {
+                let cuantos = parseInt(numero.value)
+                for (let vari = 0; vari < cuantos; vari++) {
+                let li = document.createElement("li")
+                li.innerHTML = texto.value
+                lista.appendChild(li)
+                // Lo de abajo es para que los campoos se queden vacíos
+                }texto.value = ''
+                numero.value = ''
+            } else{
+                alert("Rellena todos los campos imbécil")
+            }
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <input type="text" id="texto" placeholder="¿Qué coño quieres?">
+    <input type="number" id="numero" placeholder="¿Y cuántos?">
+    <button id="boton">Damelo venga</button><br/>
+    <ul id="lista">
+    </ul>
+</body>
+</html>

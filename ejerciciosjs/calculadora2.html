@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script>
+    window.addEventListener("load",function () {
+        let numero1 = document.getElementById("numero1")
+        let numero2 = document.getElementById("numero2")
+        let suma = document.getElementById("suma")
+        let resta = document.getElementById("resta")
+        let multi = document.getElementById("multi")
+        let divi = document.getElementById("divi")
+        let coma = document.getElementById("coma")
+        let contenedor = document.getElementById("contenedor")
+        suma.addEventListener("click",function () {
+            let valor1 = parseInt(numero1.value)
+            let valor2 = parseInt(numero2.value)
+            contenedor.innerHTML = valor1 + valor2
+        })
+        resta.addEventListener("click",function () {
+            let valor1 = parseInt(numero1.value)
+            let valor2 = parseInt(numero2.value)
+            contenedor.innerHTML = valor1 - valor2
+        })
+        divi.addEventListener("click",function () {
+            let valor1 = parseInt(numero1.value)
+            let valor2 = parseInt(numero2.value)
+            contenedor.innerHTML = valor1 / valor2
+        })
+        multi.addEventListener("click",function () {
+            let valor1 = parseInt(numero1.value)
+            let valor2 = parseInt(numero2.value)
+            contenedor.innerHTML = valor1 * valor2
+        })
+        coma.addEventListener("click",function () {
+            let valor1 = parseFloat(numero1.value)
+            let valor2 = parseFloat(numero2.value)
+            contenedor.innerHTML = valor1 + valor2
+        })
+    })  
+
+    </script>
+</head>
+<body>
+    <input type="number" id="numero1" placeholder="Dame un p*** número">
+    <input type="number" id="numero2" placeholder="Dame otro">
+    <button id="suma">SUMA</button>
+    <button id="resta">RESTA</button>
+    <button id="multi">MULTIPLICACIÓN</button>
+    <button id="divi">DIVISIÓN</button>
+    <button id="coma">Decimales</button>
+    <h1 id="contenedor"></h1><br/>
+</body>
+</html>

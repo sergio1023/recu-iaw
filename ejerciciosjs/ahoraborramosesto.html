@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otra vez los botones</title>
+    <script>
+        window.addEventListener("load",function () {
+            let numero = document.getElementById("numero")
+            let boton = document.getElementById("boton")
+            let contenedor = document.getElementById("contenedor")
+            boton.addEventListener("click",function(){
+                for (let variable1 = 0; variable1 < parseInt(numero.value); variable1++) {
+                    for (let variable2 = 0; variable2 < parseInt(numero.value); variable2++) {
+                        let button = document.createElement('button')
+                        let aleatorio = Math.random()
+                        if (aleatorio < 0.8) {
+                            button.innerHTML='Se'
+                            button.setAttribute('style','background: lightgreen')
+                        } else {
+                            button.innerHTML='Puede'
+                            button.setAttribute('style','background: red')
+                        } contenedor.appendChild(button) 
+                    }
+                    let br = document.createElement('br')
+                    contenedor.appendChild(br) 
+                }
+            })
+        })
+        window.addEventListener("load",function(){
+            let numero2 = document.getElementById("numero2")
+            let malo = document.getElementById("malo")
+            let normal = document.getElementById("normal")
+            let excelente = document.getElementById("excelente")
+            let salida = document.getElementById("salida")
+            malo.addEventListener("click",function () {
+                let valor = parseInt(numero2.value)
+                salida.innerHTML = valor
+            })
+            normal.addEventListener("click",function () {
+                let valor = parseInt(numero2.value)
+                salida.innerHTML = valor + valor * 0.1
+            })
+            excelente.addEventListener("click",function () {
+                let valor = parseInt(numero2.value)
+                salida.innerHTML = valor + valor * 0.2
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="number" id="numero">
+    <button id="boton">Nuevo juego</button>
+    <div id="contenedor"></div>
+    <br/> <br/>
+    <input type="number" id="numero2"><br/>
+    <input type="radio" id="malo" name="botones">MALO<br/>
+    <input type="radio" id="normal" name="botones">NORMAL<br/>
+    <input type="radio" id="excelente" name="botones">EXCELENTE<br/>
+    <div id="salida"></div>
+</body>
+</html>
