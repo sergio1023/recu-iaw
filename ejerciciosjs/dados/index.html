@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado</title>
+    <script>
+        window.addEventListener("load",function () {
+            let boton = document.getElementById("boton")
+            let imagen1 = document.getElementById("imagen1")
+            let imagen2 = document.getElementById("imagen2")
+            let imagen3 = document.getElementById("imagen3")
+            let imagen4 = document.getElementById("imagen4")
+            let imagen5 = document.getElementById("imagen5")
+            let imagen6 = document.getElementById("imagen6")
+            let contenedor = document.getElementById("contenedor")
+            let salida = document.getElementById("salida")
+        boton.addEventListener("click",function () {
+            let formula = Math.random()*7
+            let aleatorio = Math.floor(formula)
+            contenedor.innerHTML = aleatorio
+                if (aleatorio == 0) {
+                    salida.innerHTML = "Número no válido"
+                }
+                if (aleatorio == 1) {
+                    let imagendado1 = imagen1.src ="dado1.jpg"           
+                    imagen1.innerHTML = imagendado1
+                }
+                if (aleatorio == 2) {
+                    let imagendado2 = imagen2.src ="dado2.jpg"           
+                    imagen2.innerHTML = imagendado2
+                }
+                if (aleatorio == 3) {
+                    let imagendado3 = imagen3.src ="dado3.png"           
+                    imagen3.innerHTML = imagendado3
+                }
+                if (aleatorio == 4) {
+                    let imagendado4 = imagen4.src ="dado4.jpg"           
+                    imagen4.innerHTML = imagendado4
+                }
+                if (aleatorio == 5) {
+                    let imagendado5 = imagen5.src ="dado5.jpg"           
+                    imagen5.innerHTML = imagendado5
+                }
+                if (aleatorio == 6) {
+                    let imagendado6 = imagen6.src ="dado6.jpg"           
+                    imagen6.innerHTML = imagendado6
+                }
+        })
+    })
+            
+        
+
+
+    </script>
+</head>
+<body>
+    <button id="boton">TIRAR</button>    
+    <br>
+    <h1 id="contenedor"></h1>
+    <br><br>
+    <h1 id="imagen1"> </h1>
+    <h1 id="imagen2"> </h1>
+    <h1 id="imagen3"> </h1>
+    <h1 id="imagen4"> </h1>
+    <h1 id="imagen5"> </h1>
+    <h1 id="imagen6"> </h1>
+</body>
+</html>
