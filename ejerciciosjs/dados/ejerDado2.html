@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado</title>
+    <script>
+        window.addEventListener("load",function () {
+            let numero = document.getElementById("numero")
+            let boton = document.getElementById("boton")
+            let contenedor = document.getElementById("contenedor")
+            let salida = document.getElementById("salida")
+        boton.addEventListener("click",function () {
+            
+            let numdado = parseInt(numero.value)
+            
+            for (let index = 0; index < numdado; index++) {   
+                let div = document.createElement('div')
+                let formula = Math.random()*6
+                let aleatorio = Math.floor(formula + 1)          
+               if (aleatorio == 1) {
+                    div.innerHTML = "<img width=110 height=110 src=1.jpg>"
+                }else if (aleatorio == 2) {
+                    div.innerHTML = "<img width=110 height=110 src=2.jpg>"
+                }else if (aleatorio == 3) {
+                    div.innerHTML = "<img width=110 height=110 src=3.jpg>"
+                }else if (aleatorio == 4) {
+                    div.innerHTML = "<img width=110 height=110 src=4.jpg>"
+                }else if (aleatorio == 5) {
+                    div.innerHTML = "<img width=110 height=110 src=5.jpg>"
+                }else if (aleatorio == 6) {
+                    div.innerHTML = "<img width=110 height=110 src=6.jpg>"
+                }
+                
+                let br = document.createElement('br')
+                salida.appendChild(div)
+                salida.appendChild(br)
+            }
+        })
+    })
+
+            
+    </script>
+</head>
+<body>
+    <input type="number" id="numero" placeholder="¿Cuántos dados tiras?">
+    <button id="boton">TIRAR</button>    
+    <br>
+    <h1 id="contenedor"></h1>
+    <br><br>
+    <div id="salida"></div>
+</body>
+</html>
