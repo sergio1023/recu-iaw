@@ -8,15 +8,46 @@
     <script>
         window.addEventListener("load",function () {
             let tropa1 = document.getElementById("tropa1")
-            let tropa2 = document.getElementById("boton")
-            let boton = document.getElementById("contenedor")
+            let tropa2 = document.getElementById("tropa2")
+            let boton = document.getElementById("boton")
             let contenedoratacante = document.getElementById("contenedoratacante")
             let contenedordefensor = document.getElementById("contenedordefensor")
             let resultado = document.getElementById("resultado")
             boton.addEventListener("click",function () {
+                contenedoratacante.innerHTML = ""
+                contenedordefensor.innerHTML = ""
+                resultado.innerHTML = ""
+                let numatac = parseInt(tropa1.value)
+                let numdef = parseInt(tropa2.value)
+                let sumatacante = 0
+                let sumdefensor = 0
+                for (let ataque = 0; ataque < numatac; ataque++) {
+                    let span1 = document.createElement('span')
+                    let formula1 = Math.random()*6
+                    let aleatorio1 = Math.floor(formula1 + 1)
+                    let numrandom1 = aleatorio1
+                    sumatacante += numrandom1
+                    span1.innerHTML = "<img width=110 height=110 src=" + numrandom1 + ".jpg>" 
+                    contenedoratacante.appendChild(span1)    
+                }
                 
-                
-
+                for (let defensa = 0; defensa < numdef; defensa++) {
+                    let span2 = document.createElement('span')
+                    let formula2 = Math.random()*6
+                    let aleatorio2 = Math.floor(formula2 + 1)
+                    let numrandom2 = aleatorio2
+                    sumdefensor += numrandom2
+                    span2.innerHTML = "<img width=110 height=110 src=" + numrandom2 + ".jpg>" 
+                    contenedordefensor.appendChild(span2)
+                    
+                }
+                    if (sumatacante > sumdefensor) {
+                        resultado.innerHTML = "<h1>GANA ATACANTE</h1>"
+                    }else if (sumatacante < sumdefensor) {
+                        resultado.innerHTML = "<h1>GANA DEFENSOR</h1>"
+                    }else {
+                        resultado.innerHTML = "<h1>EMPATE</h1>"
+                    }                      
             })
         })
     </script>
@@ -26,9 +57,11 @@
     <input type="number" id="tropa1"><br><br>
     <h4>DEFENSOR</h4>
     <input type="number" id="tropa2"><br><br><br>
-    <input type="button" id="boton" value="lanzar">
-    <div id="contenedoratacante"></div><br>
-    <div id="contenedordefensor"></div><br>
-    <div id="resultado"></div>
+    <input type="button" id="boton" value="lanzar"><br><br>
+    <h8>DADOS DEL ATACANTE</h8><br><br><br>
+    <span id="contenedoratacante"></span><br><br>
+    <h8>DADOS DEL DEFENSOR</h8><br><br><br>
+    <span id="contenedordefensor"></span><br>
+    <span id="resultado"></span>
 </body>
 </html>
