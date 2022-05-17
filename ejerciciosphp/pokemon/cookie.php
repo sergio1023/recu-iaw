@@ -1,12 +1,12 @@
 <?php
-$nvisita = 0;
-if(!isset($_COOKIE['nvisita'])) {
-    $nvisita = 1;
+$numarroz = 0;
+if(!isset($_COOKIE['numarroz'])) {
+    $numarroz = 1;
 } else {
-    $nvisita = $_COOKIE['nvisita'];
-    $nvisita = $nvisita * 2;
+    $numarroz = $_COOKIE['numarroz'];
+    $numarroz = $numarroz * 2;
 }
-setcookie("nvisita", $nvisita);
+setcookie("numarroz", $numarroz);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +17,10 @@ setcookie("nvisita", $nvisita);
     <title>Cookies </title>
 </head>
 <body>
-    <?php if($nvisita == 1) { ?>
-        <h1>Según la casilla en la que estas tienes <?=$nvisita?> granos de arroz</h1>
+    <?php if($numarroz == 1) { ?>
+        <h1>Comienzas con <?=$numarroz?> grano de arroz, pero...</h1>
     <?php } else { ?>
-        <h1>Según la casilla en la que estas tienes <?=$nvisita?> granos de arroz</h1>
+        <h1>Según la casilla en la que estas tienes <?=$numarroz?> granos de arroz</h1>
      <?php } ?>   
 </body>
 </html>
