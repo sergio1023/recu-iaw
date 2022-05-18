@@ -1,8 +1,10 @@
 <?php
 include('acceso_datos.php');
 
-$datos = $conexion_bd->prepare("SELECT c.nombre_cliente, p.fecha_pedido FROM cliente c, pedido p WHERE c.codigo_cliente=p.codigo_cliente AND c.codigo_cliente = 7;");
-$datos->execute(array('7' => $_GET['codigo_cliente']));
+print_r($_GET);
+
+$datos = $conexion_bd->prepare("SELECT c.nombre_cliente, p.fecha_pedido FROM cliente c, pedido p WHERE c.codigo_cliente=p.codigo_cliente AND c.codigo_cliente = :codcliente;");
+$datos->execute(array(':codcliente' => $_GET['codigo_cliente']));
 $row = $datos->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -11,11 +13,11 @@ $row = $datos->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
+    <title>Pokemon3</title>
 </head>
 <body>
     <div id="content">
-        <h1>Saca el nombre y su fecha de pedido si el codigo de cliente es 7</h1>
+        <h1>Saca el nombre y su fecha de pedido dependiendo del codigo</h1>
     <table>
             <thead>
                 <tr>
