@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direccionamiento IP</title>
+    <script>
+        window.addEventListener("load",function () {
+            let obtetouno = document.getElementById("obtetouno")
+            let obtetodos = document.getElementById("obtetodos")
+            let obtetotres = document.getElementById("obtetotres")
+            let obtetocuatro = document.getElementById("obtetocuatro")
+            let obtetocinco = document.getElementById("obtetocinco")
+            let obtetoseis = document.getElementById("obtetoseis")
+            let obtetosiete = document.getElementById("obtetosiete")
+            let obtetoocho = document.getElementById("obtetoocho")
+            let mask8 = document.getElementById("mask8")
+            let mask16 = document.getElementById("mask16")
+            let mask24 = document.getElementById("mask24")
+            let decidir = document.getElementById("decidir")
+            let contenedor = document.getElementById("contenedor")
+            decidir.addEventListener("click",function () {
+                let valorobtetouno = parseInt(obtetouno.value)
+                let valorobtetodos = parseInt(obtetodos.value)
+                let valorobtetotres = parseInt(obtetotres.value)
+                let valorobtetocinco = parseInt(obtetocinco.value)
+                let valorobtetoseis = parseInt(obtetoseis.value)
+                let valorobtetosiete = parseInt(obtetosiete.value)
+                if (valorobtetouno == valorobtetocinco && mask8.checked){
+                    contenedor.innerHTML = "Las IPs están en la misma red"
+                } else if (valorobtetouno == valorobtetocinco && valorobtetodos == valorobtetoseis && mask16.checked) {
+                    contenedor.innerHTML = "Las IPs están en la misma red"
+                } else if (valorobtetouno == valorobtetocinco && valorobtetodos == valorobtetoseis && valorobtetotres ==  valorobtetosiete && mask24.checked) {
+                    contenedor.innerHTML = "Las IPs están en la misma red"
+                } else {
+                    contenedor.innerHTML = "Las IPs no están en la misma red"
+                }
+
+                /*
+            // APARTADO DE Máscara 8
+            if (mask8.checked) {
+                if (valorobtetouno == valorobtetocinco ) {
+                    contenedor.innerHTML = "Las IPs están en la misma red"
+                }else {
+                    contenedor.innerHTML = "Las IPs no están en la misma red"
+                }
+            }
+            // APARTADO DE Máscara 16
+            if (mask16.checked) {
+                if (valorobtetouno == valorobtetocinco && valorobtetodos == valorobtetoseis) {
+                    contenedor.innerHTML = "Las IPs están en la misma red"
+                }else {
+                    contenedor.innerHTML = "Las IPs no están en la misma red"
+                }
+
+            }
+            // APARTADO DE MÁSCARA 24
+            if (mask24.checked) {
+                if (valorobtetouno == valorobtetocinco && valorobtetodos == valorobtetoseis && valorobtetotres ==  valorobtetosiete ) {
+                    contenedor.innerHTML = "Las IPs están en la misma red"
+                }else {
+                    contenedor.innerHTML = "Las IPs no están en la misma red"
+                }  
+            }      */          
+            })
+        })
+    </script>
+</head>
+<body>
+        IPa
+        <input type="number" id="obtetouno" min="0" max="255">.
+        <input type="number" id="obtetodos" min="0" max="255">.
+        <input type="number" id="obtetotres" min="0" max="255">.
+        <input type="number" id="obtetocuatro" min="0" max="255"><br><br>
+        IPb
+        <input type="number" id="obtetocinco" min="0" max="255">.
+        <input type="number" id="obtetoseis" min="0" max="255">.
+        <input type="number" id="obtetosiete" min="0" max="255">.
+        <input type="number" id="obtetoocho" min="0" max="255"><br><br>
+        Máscara 
+        8<input type="radio" id="mask8" name="mascara" checked>
+        16<input type="radio" id="mask16" name="mascara">
+        24<input type="radio" id="mask24" name="mascara"><br>
+        <button id="decidir">Decidir</button>
+<h3 id="contenedor"></h3>    
+</body>
+</html>

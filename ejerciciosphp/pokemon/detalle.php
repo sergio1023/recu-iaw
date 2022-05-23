@@ -1,3 +1,4 @@
+
 <?php
 include('acceso_datos.php');
 
@@ -15,7 +16,7 @@ $row = $datos->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div id="content">
-        <h1>Saca el nombre y su fecha de pedido si el codigo de cliente es 7</h1>
+        <h1>Saca el nombre y su fecha de pedido dependiendo del codigo_cliente</h1>
     <table>
             <thead>
                 <tr>
