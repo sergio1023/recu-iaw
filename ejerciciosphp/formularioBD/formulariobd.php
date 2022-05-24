@@ -5,7 +5,7 @@ $ip = "";
 $aula = "";
 $amd = "";
 $intel = "";
-$android = "";
+$asus = "";
 $formulario ="";
 
 $error = false;
@@ -34,7 +34,9 @@ if (isset($_POST['enviar'])) {
 include('acceso_datos.php');
 
 $datos = $conexion_bd->prepare("SELECT ip, aula, equipo FROM clase");
-$insertar = $conexion_bd->prepare("INSERT INTO clase VALUES (<?=$ip?>,<?=$aula?>,<?=$formulario?>)");
+$insertar = $conexion_bd->prepare("INSERT INTO clase VALUES ('$ip','$aula','$formulario')");
+$insertar->execute();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,13 +54,12 @@ $insertar = $conexion_bd->prepare("INSERT INTO clase VALUES (<?=$ip?>,<?=$aula?>
         IP<input   <?=($errorip)?'class="error"':'';?> type="text" name="ip" value="<?=$ip?>" placeholder="escribe la IP del aula"><br><br>
         AULA<input   <?=($erroraula)?'class="error"':'';?> type="text" name="aula" value="<?=$aula?>" placeholder="Rellena con nombre de aula"><br><br>
        Tipo de equipo: 
-        <input type="radio" name="tipo" value="intel" <?=$intel?>  <?=($urgente == 'intel')?'checked':''?>><span class="<?=($errorformulario)?'error':''?>">INTEL</span>
-        <input type="radio" name="tipo" value="amd"  <?=$amd?>  <?=($urgente == 'amd')?'checked':''?>><span class="<?=($errorformulario)?'error':''?>">AMD</span>
-        <input type="radio" name="tipo" value="android"  <?=$android?>  <?=($urgente == 'android')?'checked':''?>><span class="<?=($errorformulario)?'error':''?>">ANDROID</span><br><br>
+        <input type="radio" name="tipo" value="intel" <?=$intel?>  <?=($formulario == 'intel')?'checked':''?>><span class="<?=($errorformulario)?'error':''?>">INTEL</span>
+        <input type="radio" name="tipo" value="amd"  <?=$amd?>  <?=($formulario == 'amd')?'checked':''?>><span class="<?=($errorformulario)?'error':''?>">AMD</span>
+        <input type="radio" name="tipo" value="asus"  <?=$asus?>  <?=($formulario == 'asus')?'checked':''?>><span class="<?=($errorformulario)?'error':''?>">ASUS</span><br><br>
         <input type="submit" name="enviar" value="enviar">
     </form>
-    <?php } else { ?>
-        <h2> información correcta </h2>
+    <?php }  ?>
         <table>
             <thead>
                 <tr>
@@ -77,6 +78,5 @@ $insertar = $conexion_bd->prepare("INSERT INTO clase VALUES (<?=$ip?>,<?=$aula?>
                 <?php } ?>
             </tbody>
         </table>
-    <?php } ?>
 </body>
 </html>
