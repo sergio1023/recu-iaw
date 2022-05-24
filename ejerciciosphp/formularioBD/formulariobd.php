@@ -33,10 +33,12 @@ if (isset($_POST['enviar'])) {
 
 include('acceso_datos.php');
 
-$datos = $conexion_bd->prepare("SELECT ip, aula, equipo FROM clase");
+
 $insertar = $conexion_bd->prepare("INSERT INTO clase VALUES ('$ip','$aula','$formulario')");
 $insertar->execute();
 
+$datos = $conexion_bd->prepare("SELECT ip, aula, equipo FROM clase");
+$row = $datos->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +71,7 @@ $insertar->execute();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($datos as $fila){ ?>
+                <?php foreach($row as $fila){ ?>
                 <tr>
                     <td><?=$fila['ip']?></td>
                     <td><?=$fila['aula']?></td>
