@@ -37,8 +37,7 @@ include('acceso_datos.php');
 $insertar = $conexion_bd->prepare("INSERT INTO clase VALUES ('$ip','$aula','$formulario')");
 $insertar->execute();
 
-$datos = $conexion_bd->prepare("SELECT ip, aula, equipo FROM clase");
-$row = $datos->fetchAll(PDO::FETCH_ASSOC);
+$datos = $conexion_bd->query("SELECT ip, aula, equipo FROM clase");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +70,7 @@ $row = $datos->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($row as $fila){ ?>
+                <?php foreach($datos as $fila){ ?>
                 <tr>
                     <td><?=$fila['ip']?></td>
                     <td><?=$fila['aula']?></td>
