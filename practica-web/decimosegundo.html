@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimosegundo</title>
+    <script>
+         window.addEventListener("load",function () {
+            let numero1 = document.getElementById("numero1")
+            let numero2 = document.getElementById("numero2")
+            let boton = document.getElementById("boton")
+            let contenedoratac = document.getElementById("contenedoratac")
+            let contenedordef = document.getElementById("contenedordef")
+            let resultado = document.getElementById("resultado")
+            boton.addEventListener("click",function () {
+                contenedoratac.innerHTML = ""
+                contenedordef.innerHTML = ""
+                resultado.innerHTML = ""
+                let valor1 = parseInt(numero1.value)
+                let valor2 = parseInt(numero2.value)
+                let sumatac = 0
+                let sumadef = 0
+            // APARTADO ATACANTE
+                for (let i = 0; i < valor1; i++) {
+                let valorboton1 = Math.random()*6
+                let aleatorio1 =  Math.floor(valorboton1) + 1
+                contenedoratac.innerHTML = contenedoratac.innerHTML + '<img src="' + aleatorio1 + '.jpg" width="100" height="100">'              
+                sumatac += aleatorio1
+                }
+            // APARTADO DEFENSOR
+                for (let e = 0; e < valor2; e++) {
+                    let valorboton2 = Math.random()*6
+                let aleatorio2 =  Math.floor(valorboton2) + 1
+                contenedordef.innerHTML = contenedordef.innerHTML + '<img src="' + aleatorio2 + '.jpg" width="100" height="100">'
+                sumadef += aleatorio2
+                }
+
+                if (sumatac > sumadef) {
+                    resultado.innerHTML="GANA ATACANTE"
+                } if (sumatac < sumadef) {
+                    resultado.innerHTML="GANA DEFENSOR"
+                } else {
+                    resultado.innerHTML="EMPATE"
+                }
+
+
+            })
+         })
+    </script>
+</head>
+<body>
+    Atacante <br>
+    <input type="number" placeholder="¿Cuántos quieres tirar?" id="numero1"> <br> <br>
+    Defensor <br>
+    <input type="number" placeholder="¿Cuántos quieres tirar?" id="numero2"> <br><br>
+    <button id="boton">Lucha</button> <br> <br>
+    Tropas Atacante
+    <div id="contenedoratac"></div> <br><br>
+    Tropas Atacante <br>
+    <div id="contenedordef"></div> <br> <br>
+    <div id="resultado"></div>
+</body>
+</html>

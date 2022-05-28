@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinto</title>
+    <script>
+        window.addEventListener("load",function () {
+            let num = document.getElementById("num")
+            let malo = document.getElementById("malo")
+            let normal = document.getElementById("normal")
+            let contenedor = document.getElementById("contenedor")
+            let excelente = document.getElementById("excelente")
+            let boton = document.getElementById("boton")
+            boton.addEventListener("click",function () {
+                let valor = parseInt(num.value)
+                if (malo.checked) {
+                    contenedor.innerHTML = valor
+                }if (normal.checked) {
+                    contenedor.innerHTML = valor * 1.1
+                }if (excelente.checked) {
+                    contenedor.innerHTML = valor * 1.2
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="number"  id="num"> <br>
+    <input type="radio" name="propina" id="malo"> MALO <br>
+    <input type="radio" name="propina" id="normal"> normal <br>
+    <input type="radio" name="propina" id="excelente"> excelente <br>
+    <button id="boton">propina</button><br>
+    <h1 id="contenedor"></h1><br><br>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primero</title>
+    <script>
+        window.addEventListener("load",function () {
+            let numero = document.getElementById("numero")
+            let boton = document.getElementById("boton")
+            let contenedor = document.getElementById("contenedor")
+            boton.addEventListener("click",function () {
+                contenedor.innerHTML = ""
+                let valor = parseInt(numero.value)
+                for (let i = 0; i < valor;i++) {
+                    for (let o = 0; o < valor; o++) {
+                        let aleatori = Math.random()
+                        let button = document.createElement('button')
+                        if (aleatori < 0.8) {
+                            button.innerHTML = "X"
+                            button.setAttribute('style','background: lightgreen')
+                        } else {
+                            button.innerHTML = "O"
+                            button.setAttribute('style','background: red')
+                        }
+                    contenedor.appendChild(button)
+                    }
+                    let br = document.createElement('br')
+                    contenedor.appendChild(br)
+                } 
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="number" id="numero" placeholder="¿Cuántos botones quieres?"><br>
+    <button id="boton">Sacar</button><br><br>
+    <div id="contenedor"></div>
+</body>
+</html>

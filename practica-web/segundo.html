@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo</title>
+    <script>
+        window.addEventListener("load",function () {
+            let boton1 = document.getElementById("boton1")
+            let boton2 = document.getElementById("boton2")
+            let boton3 = document.getElementById("boton3")
+            let boton0 = document.getElementById("boton0")
+            let limpiar = document.getElementById("limpiar")
+            boton0.addEventListener("click",function () {
+                contenedor.innerHTML = contenedor.innerHTML + 0
+            })
+            boton1.addEventListener("click",function () {
+                contenedor.innerHTML = contenedor.innerHTML + 1
+            })
+            boton2.addEventListener("click",function () {
+                contenedor.innerHTML = contenedor.innerHTML + 2
+            })
+            boton3.addEventListener("click",function () {
+                contenedor.innerHTML = contenedor.innerHTML + 3
+            })
+            limpiar.addEventListener("click",function () {
+                contenedor.innerHTML = ""
+            })
+        })
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td><button id="boton1">1</button></td>
+        <td><button id="boton2">2</button></td>
+        <td><button id="boton3">3</button></td>
+    </tr>
+    <tr>
+        <td><button id="#">#</button></td>
+        <td><button id="boton0">0</button></td>
+        <td><button id="*">*</button></td>
+    </tr>
+</table>
+<br/>
+<h1 id="contenedor"></h1><br/>
+<button id="limpiar">LIMPIAR</button><br/><br/>
+</body>
+</html>

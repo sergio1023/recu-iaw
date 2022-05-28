@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octavo</title>
+    <script>
+         window.addEventListener("load",function () {
+            let numero = document.getElementById("numero")
+            let circunferencia = document.getElementById("circunferencia")
+            let circulo = document.getElementById("circulo")
+            let esfera = document.getElementById("esfera")
+            let boton = document.getElementById("boton")
+            let contenedor = document.getElementById("contenedor")
+            boton.addEventListener("click",function () {
+                let r = parseFloat(numero.value)
+                let br = document.createElement('br')
+                contenedor.innerHTML = ""
+                if (circunferencia.checked) {
+                    contenedor.innerHTML = contenedor.innerHTML +  (2 * 3.14 * r) + '<br>'
+                } if (circulo.checked) {
+                    contenedor.innerHTML = contenedor.innerHTML +  (3.14 * r * r) + contenido.appendChild(br)
+                } if (esfera.checked) {
+                    contenedor.innerHTML = contenedor.innerHTML +  (4/3 * 3.14 * r * r * r) + '<br>'
+                } if (circunferencia.checked == false && circulo.checked == false && esfera.checked == false) {
+                    contenedor.innerHTML = "selecciona una casilla"
+                }   
+            })
+         })
+    </script>
+</head>
+<body>
+    <input type="number" id="numero"> <br>
+    <input type="checkbox" name="formula" id="circunferencia">Calcular circunferencia <br>
+    <input type="checkbox" name="formula" id="circulo">Calcular circulo <br>
+    <input type="checkbox" name="formula" id="esfera">Calcular esfera <br>
+    <button id="boton">Calcula hijo de perra</button> <br>
+    <div id="contenedor"></div>
+</body>
+</html>
