@@ -32,7 +32,7 @@ if (isset($_POST['enviar'])) {
         ${"edad_".$_POST["edad"]}='checked';
     }
 // || significa or
-    if($error_nombre || $error_apellido) {
+    if($error_nombre || $error_apellido || $error_edad) {
         $errores = true;
     }
 }
@@ -69,9 +69,9 @@ if (isset($_POST['enviar'])) {
     </fieldset>
     <fieldset>
     <legend>Edad</legend>
-    <label><input type="radio" value="20_39" name="edad" <?=$edad_20_39?>/>20-39</label>
-    <label><input type="radio" value="40_59" name="edad" <?=$edad_40_59?> />40-59</label>
-    <label><input type="radio" value="60_79" name="edad" <?=$edad_60_79?>/>60-79</label>
+    <label><input type="radio" value="20_39" name="edad" <?=($edad_20_39 == '20_39')?'checked':''?> ><span class="<?=($error_edad)?'error':''?>">20_39</span></label>
+    <label><input type="radio" value="40_59" name="edad" <?=($edad_40_59 == '40_59')?'checked':''?> ><span class="<?=($error_edad)?'error':''?>">40_59</span></label>
+    <label><input type="radio" value="60_79" name="edad" <?=($edad_60_79 == '60_79')?'checked':''?> ><span class="<?=($error_edad)?'error':''?>">60-79</span></label><br>
     </fieldset>
     <input type="submit" name="enviar" value="enviar">
     </form>

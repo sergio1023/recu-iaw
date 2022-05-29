@@ -1,7 +1,7 @@
 <?php
 include('menu.php');
 if ($_POST['examen'] != 'aprobado') {
-    echo '<meta http-equiv="refresh" content="0;url=login.php">';
+    echo '<meta http-equiv="refresh" content="3;url=login.php">';
 }
 ?>
 <!DOCTYPE html>

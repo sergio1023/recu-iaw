@@ -48,7 +48,7 @@ if (isset($_GET['buscar']) &&
             
             </tbody>
         </table>
-    <?php } ?>      
+    <?php }} ?>      
 
 </div>
 </body>
